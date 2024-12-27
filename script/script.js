@@ -1,4 +1,5 @@
-const body = document.querySelector('body');
+document.addEventListener('DOMContentLoaded', () => {
+  const body = document.querySelector('body');
 const stickyBar = document.getElementById('bar');
 const light = document.getElementById('light');
 const dark = document.getElementById('dark');
@@ -28,3 +29,5 @@ const toggleMode = (mode) => {
 
 light.addEventListener('click', () => toggleMode('dark'));
 dark.addEventListener('click', () => toggleMode('light'));
+
+})
