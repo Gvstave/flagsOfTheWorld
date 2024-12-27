@@ -2,32 +2,36 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Mona Sans, sans-serif;
 }
 
 body {
     background-color: whitesmoke;
     scroll-behavior: smooth;
     font-family: mona, sans-serif;
+    transition: 0.2s ease;
+}
+
+.material-symbols-outlined {
+    font-size: 19px;
 }
 
 header {
     background-color: white;
-    padding: 25px 30px;
+    padding: 25px 20px;
     width: 100%;
-    height: auto;
-    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .12);
 }
 
-header span:nth-of-type(1){
+header span:nth-of-type(1) {
     font-size: 1.6em;
     font-weight: 400;
 }
 
-header span button{
+header button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,32 +44,36 @@ header span button{
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    position: -webkit-sticky;
+    top: 0;
     width: 100%;
     height: 40px;
-    padding: 5px 40px;
-    margin: 20px auto;
-    top: 0px;
-    
+    padding: 5px 20px;
+    margin: 50px auto;
+}
+
+.search-contents input {
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    outline: none;
+    padding: 8px;
+    transition: .3s ease;
 }
 
 .search-contents input:nth-of-type(1) {
     width: 50%;
+    padding: 8px 30px;
 }
 
-.search-contents input {
-    padding: 8px 40px;
-    border: none;
-    border-radius: inherit;
-    background-color: white;
-    outline: none;
+.search-contents input:nth-of-type(2) {
+    padding: 8px;
 }
 
 .search-contents input:hover {
     border: 1px solid black;
 }
 
-.search-contents button{
+.search-contents button {
     position: absolute;
     margin-left: 5px;
     border: none;
@@ -83,7 +91,6 @@ header span button{
 
 section {
     text-align: left;
-    display: block;
     background-color: white;
     padding-bottom: 15px;
     border-radius: 4px;
@@ -93,19 +100,18 @@ section {
 
 section img {
     width: 100%;
-    height: 50%;
+    height: auto;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border: 1px solid whitesmoke;
 }
 
 section h4 {
-    margin: 20px 0px 20px 15px;
+    margin: 15px;
 }
 
 section p {
-    margin: 5px 0px 0px 15px;
     font-size: 12px;
     color: #333;
-    
+    margin: 5px 0px 10px 15px;
 }

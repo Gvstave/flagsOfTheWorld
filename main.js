@@ -16826,7 +16826,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const content = document.getElementById('contents');
 
-// Assuming countries is an array of country objects
 countries.map((country) => {
   const section = document.createElement('section');
   const image = document.createElement('img');
@@ -16839,24 +16838,20 @@ countries.map((country) => {
   const regionSpan = document.createElement('span');
   const capitalSpan = document.createElement('span');
 
-  // Set image attributes
   image.setAttribute('src', `${country.flag}`);
-  image.setAttribute('alt', `Flag of ${country.name}`); // Added alt text for accessibility
+  image.setAttribute('alt', `Flag of ${country.name}`); 
 
-  // Set text content for each element
   head.textContent = country.name;
   population.innerHTML = `<strong>Population:</strong> ${country.population}`;
   region.innerHTML = `<strong>Region:</strong> ${country.region}`;
   capital.innerHTML = `<strong>Capital:</strong> ${country.capital}`;
 
-  // Append elements to section in an order that makes sense visually
   section.appendChild(image);
   section.appendChild(head);
   section.appendChild(population);
   section.appendChild(region);
   section.appendChild(capital);
 
-  // Finally, append the section to the content container
   content.appendChild(section);
 });
 

@@ -1,20 +1,72 @@
-#bar.scrolled {
-    transition: background-color 0.3s ease;
-    background-color: rgb(255, 255, 255);
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .12);   
-
+body {
+    transition: 0.2s ease;
 }
 
-#bar.scrolled input:nth-of-type(1):hover {
+header button {
+    background-color: inherit;
+    padding: 8px;
+    border-radius: 50px;
+}
+
+#dark {
+    display: none;
+    transition: 0s ease;
+}
+
+#light:hover, #dark:hover {
+    background-color: whitesmoke;
+}
+
+#dark:hover {
+    background-color: #202c37;
+}
+
+#bar.scrolled {
+    transition: 0.3s ease;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12);
+}
+
+#bar.scrolled input:hover {
     background-color: rgb(234, 234, 234);
     border: none;
 }
 
-#bar.scrolled input:nth-of-type(2) {
-    border: 1px solid black;
+body.dark-mode {
+    background-color: #202c37;
+    color: white;
 }
 
-#bar.scrolled input:nth-of-type(2):hover {
-    background-color: rgb(234, 234, 234);
+body.dark-mode button,
+body.dark-mode input {
+    color: inherit;
+}
+
+body.dark-mode header {
+    background-color: #2b3945;
+}
+
+body.dark-mode #bar.scrolled {
+    background-color: #2b3945;
+}
+
+body.dark-mode #bar input {
+    background-color: #2b3945;
+}
+
+body.dark-mode #bar.scrolled input:hover {
+    background-color: #202c37;
+}
+
+body.dark-mode section {
+    background-color: #2b3945;
+}
+
+body.dark-mode section img {
+    border: none;
+}
+
+body.dark-mode section p {
+    color: #ccc;
 }
