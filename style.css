@@ -1,0 +1,20 @@
+#bar.scrolled {
+    transition: background-color 0.3s ease;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12);   
+
+}
+
+#bar.scrolled input:nth-of-type(1):hover {
+    background-color: rgb(234, 234, 234);
+    border: none;
+}
+
+#bar.scrolled input:nth-of-type(2) {
+    border: 1px solid black;
+}
+
+#bar.scrolled input:nth-of-type(2):hover {
+    background-color: rgb(234, 234, 234);
+}
