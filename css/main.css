@@ -2,18 +2,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Mona Sans, sans-serif;
 }
 
 body {
     background-color: whitesmoke;
     scroll-behavior: smooth;
-    font-family: mona, sans-serif;
-    transition: 0.2s ease;
+    font-family: Mona Sans, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .material-symbols-outlined {
     font-size: 19px;
+    background-color: transparent;
+    border: none;
+}
+
+#light:hover {
+    background-color: whitesmoke;
 }
 
 header {
@@ -41,44 +46,70 @@ header button {
 
 .search-contents {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     position: sticky;
     top: 0;
     width: 100%;
     height: 40px;
     padding: 5px 20px;
     margin: 50px auto;
+    z-index: 1000;
 }
 
-.search-contents input {
+.search-contents span {
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.search-contents span:nth-of-type(1) {
+    width: 50%;
+}
+
+.search-contents span:nth-of-type(1) input {
+    padding: 7px;
+    width: 100%;
+    max-width: 300px; 
     border: none;
     border-radius: 5px;
-    background-color: white;
     outline: none;
-    padding: 8px;
-    transition: .2s ease;
 }
 
-.search-contents input:nth-of-type(1) {
-    /**width: 50%;**/
-    padding: 8px 30px;
+
+.search-contents span:nth-of-type(2) input{
+    padding: 7px;
+    border-radius: inherit;
+    background-color: white;
 }
 
-.search-contents input:nth-of-type(2) {
-    padding: 8px;
-}
-
-.search-contents input:hover {
-    border: 1px solid black;
-}
-
-.search-contents button {
+#menu {
     position: absolute;
-    margin-left: 5px;
-    border: none;
-    background: none;
-    font-size: 16px;
+    width: 230px;
+    height: auto;
+    right: 20px;
+    top: 45px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12);
+    padding: 5px;
+    display: none;
+}
+
+#menu.show {
+    display: block;
+}
+
+#menu button {
+   text-align: left;
+   display: block;
+   width: 100%;
+   padding: 10px;
+   border: none;
+   background-color: inherit;
+   border-radius: inherit;
+} 
+
+#menu button:hover {
+    background-color: whitesmoke;
 }
 
 #contents {

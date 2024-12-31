@@ -27,12 +27,24 @@
     </header>
     <main>
         <div class="search-contents" id="bar">
-            <button class="material-symbols-outlined">
-                search
-            </button>
-            <input type="text" placeholder="Search for a country...">
-            <input type="button" class="material-symbols-outlined" value="sort">
+            <span>
+                <input type="search" placeholder="Search for a country..." id="search-country" />
+            </span>
+            <span>
+                <input type="button" class="material-symbols-outlined" value="sort" id="sort">
+            </span>
+            <span id="menu">
+                <button class="filter-by" type="button" value="All">All</button>
+                <button class="filter-by" type="button" value="Africa">Africa</button>
+                <button class="filter-by" type="button" value="Europe">Europe</button>
+                <button class="filter-by" type="button" value="Asia">Asia</button>
+                <button class="filter-by" type="button" value="Americas">Americas</button>
+                <button class="filter-by" type="button" value="Oceania">Oceania</button>
+                <button class="filter-by" type="button" value="Polar">Polar</button>
+                <button class="filter-by" type="button" value="Antarctica">Antarctica</button>
+            </span>
         </div>
+
         <div id="contents">
 
         </div>

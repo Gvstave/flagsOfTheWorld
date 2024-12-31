@@ -16824,35 +16824,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  const content = document.getElementById('contents');
+  function filterCountries(filteredRegion) {
+    const content = document.getElementById('contents');
+    content.innerHTML = "";
 
-countries.map((country) => {
-  const section = document.createElement('section');
-  const image = document.createElement('img');
-  const head = document.createElement('h4');
-  const population = document.createElement('p');
-  const region = document.createElement('p');
-  const capital = document.createElement('p');
+    if (filteredRegion.length === 0) {
+      const message = document.createElement('p');
+      message.textContent = "No countries found";
+      content.appendChild(message);
+      return;
+    }
 
-  const populationSpan = document.createElement('span');
-  const regionSpan = document.createElement('span');
-  const capitalSpan = document.createElement('span');
+    filteredRegion.map((country) => {
+      const section = document.createElement('section');
+      const image = document.createElement('img');
+      const head = document.createElement('h4');
+      const population = document.createElement('p');
+      const region = document.createElement('p');
+      const capital = document.createElement('p');
 
-  image.setAttribute('src', `${country.flag}`);
-  image.setAttribute('alt', `Flag of ${country.name}`); 
+      image.setAttribute('src', `${country.flag}`);
+      image.setAttribute('alt', `Flag of ${country.name}`);
 
-  head.textContent = country.name;
-  population.innerHTML = `<strong>Population:</strong> ${country.population}`;
-  region.innerHTML = `<strong>Region:</strong> ${country.region}`;
-  capital.innerHTML = `<strong>Capital:</strong> ${country.capital}`;
+      head.textContent = country.name;
+      population.innerHTML = `<strong>Population:</strong> ${country.population}`;
+      region.innerHTML = `<strong>Region:</strong> ${country.region}`;
+      capital.innerHTML = `<strong>Capital:</strong> ${country.capital}`;
 
-  section.appendChild(image);
-  section.appendChild(head);
-  section.appendChild(population);
-  section.appendChild(region);
-  section.appendChild(capital);
+      section.appendChild(image);
+      section.appendChild(head);
+      section.appendChild(population);
+      section.appendChild(region);
+      section.appendChild(capital);
 
-  content.appendChild(section);
-});
+      content.appendChild(section);
+    });
+  }
 
+  const filterBy = document.querySelectorAll('.filter-by');
+
+  filterBy.forEach(item => {
+    item.addEventListener('click', () => {
+      const givenRegion = countries.filter(country => country.region === item.value);
+      if(item.value === 'All'){
+        filterCountries(countries);
+      }else {
+        filterCountries(givenRegion);
+      }
+    });
+  });
+
+  filterCountries(countries);
 })

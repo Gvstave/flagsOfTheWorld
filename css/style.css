@@ -1,20 +1,5 @@
-body {
-    transition: 0.2s ease;
-}
-
-header button {
-    background-color: inherit;
-    padding: 8px;
-    border-radius: 50px;
-}
-
 #dark {
-    display: none;
-    transition: 0s ease;
-}
-
-#light:hover, #dark:hover {
-    background-color: whitesmoke;
+    display: none; 
 }
 
 #dark:hover {
@@ -23,18 +8,31 @@ header button {
 
 #bar.scrolled {
     background-color: rgb(255, 255, 255);
-    border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .12);
 }
 
-#bar.scrolled input:hover {
-    background-color: rgb(234, 234, 234);
+#bar.scrolled span:nth-of-type(1) input {
+    background-color: whitesmoke;
+}
+
+body.dark-mode #bar.scrolled {
+    background-color: #2b3945;
+}
+
+body.dark-mode #bar.scrolled span:nth-of-type(1) input {
+    background-color: #202c37;
+    border: none;
+}
+
+body.dark-mode #bar.scrolled input:hover {
+    background-color: #202c37;
     border: none;
 }
 
 body.dark-mode {
     background-color: #202c37;
     color: white;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 body.dark-mode button,
@@ -46,15 +44,16 @@ body.dark-mode header {
     background-color: #2b3945;
 }
 
-body.dark-mode #bar.scrolled {
+body.dark-mode #bar span input {
     background-color: #2b3945;
 }
 
-body.dark-mode #bar input {
+body.dark-mode #bar #menu {
     background-color: #2b3945;
+    border: none;
 }
 
-body.dark-mode #bar.scrolled input:hover {
+body.dark-mode #bar #menu button:hover {
     background-color: #202c37;
 }
 
@@ -68,4 +67,9 @@ body.dark-mode section img {
 
 body.dark-mode section p {
     color: #ccc;
+}
+
+body.dark-mode,
+body {
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
