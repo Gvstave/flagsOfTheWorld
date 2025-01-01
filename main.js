@@ -16824,18 +16824,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  function filterCountries(filteredRegion) {
+  //This function sets all the necessary elements to display each and every individual country and it's contents.
+  function showCountries(displayContents) {
     const content = document.getElementById('contents');
+    
     content.innerHTML = "";
 
-    if (filteredRegion.length === 0) {
+    if (displayContents.length === 0) {
+      const note = document.getElementById('note');
       const message = document.createElement('p');
+      message.classList.add('message')
       message.textContent = "No countries found";
       content.appendChild(message);
+      note.classList.add('hide-note');
       return;
     }
+    note.classList.remove('hide-note')
 
-    filteredRegion.map((country) => {
+    displayContents.map((country) => {
       const section = document.createElement('section');
       const image = document.createElement('img');
       const head = document.createElement('h4');
@@ -16861,18 +16867,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  //The function to handle the filtration of country by region
   const filterBy = document.querySelectorAll('.filter-by');
+  
+
+  const hideMenu = () => {
+    const menu = document.getElementById('menu')
+    menu.classList.toggle('show');
+  }
+
+  let filteredRegion;
 
   filterBy.forEach(item => {
     item.addEventListener('click', () => {
-      const givenRegion = countries.filter(country => country.region === item.value);
-      if(item.value === 'All'){
-        filterCountries(countries);
-      }else {
-        filterCountries(givenRegion);
-      }
+      hideMenu()
+      filteredRegion = countries.filter(country => country.region === item.value);
+      item.value === 'All' ? showCountries(countries) : showCountries(filteredRegion);
     });
   });
 
-  filterCountries(countries);
+  //The function to handle user input
+  const search = document.getElementById('find-country');
+
+  search.addEventListener('input', () => {
+    const searchTerm = search.value.toLowerCase().trim();
+    const filteredCountries = countries.filter(country =>
+      country.name.toLowerCase().includes(searchTerm)
+    );
+    showCountries(filteredCountries);
+  });
+
+  showCountries(countries);
 })
