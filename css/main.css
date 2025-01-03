@@ -165,7 +165,7 @@ footer {
 footer p {
     display: block;
     animation: bounce 1s ease infinite;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.238);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 footer .hide-note {
