@@ -164,7 +164,7 @@ footer {
 
 footer p {
     display: block;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.238);
 }
 
 footer .hide-note {
