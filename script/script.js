@@ -9,10 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const sort = document.getElementById('sort');
   const menu = document.getElementById('menu');
 
+  const loading = document.getElementById('loading');
+
   window.addEventListener('scroll', () => {
     const barPosition = stickyBar.getBoundingClientRect().top;
     barPosition <= 0 ? stickyBar.classList.add('scrolled') : stickyBar.classList.remove('scrolled');
   });
+
+  const setLoadEffect = () => {
+    setTimeout(() => {
+    loading.classList.add('hide-loading')
+   }, 2000);
+  }
 
   //Light and dark theme setup
   const setDark = () => {
@@ -31,10 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
     mode === 'dark' ? setDark() : setLight();
   };
 
+  const toggleMenu = () => {
+    menu.classList.toggle('show-menu');
+  }
+
   light.addEventListener('click', () => toggleMode('dark'));
   dark.addEventListener('click', () => toggleMode('light'));
 
-  sort.addEventListener('click', () => {
-    menu.classList.toggle('show');
-  });
+  sort.addEventListener('click', () => toggleMenu());
+  setLoadEffect();
 });
