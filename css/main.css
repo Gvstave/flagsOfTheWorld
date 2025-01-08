@@ -8,7 +8,6 @@ body {
     background-color: whitesmoke;
     scroll-behavior: smooth;
     font-family: Mona Sans, sans-serif;
-    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .material-symbols-outlined {
@@ -173,7 +172,7 @@ footer .hide-note {
 
 #loading {
     position: fixed;
-    background: whitesmoke;
+    background: inherit;
     width: 100%;
     height: 100vh;
     display: flex;

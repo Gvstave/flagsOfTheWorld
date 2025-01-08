@@ -32,8 +32,7 @@ body.dark-mode #bar.scrolled input:hover {
 body.dark-mode {
     background-color: #202c37;
     color: white;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
+    }
 
 body.dark-mode button,
 body.dark-mode input {
@@ -69,9 +68,7 @@ body.dark-mode section p {
     color: #ccc;
 }
 
-body.dark-mode,
-body {
-    transition: background-color 0.2s ease, color 0.2s ease;
+body.dark-mode #loading {
+    background-color: #202c37;
 }
-
 
