@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const setLoadEffect = () => {
     setTimeout(() => {
       loading.classList.add('hide-loading')
-    }, 2000);
+    }, 1500);
   }
 
   //Light and dark theme setup
