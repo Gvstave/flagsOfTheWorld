@@ -1,0 +1,21 @@
+#main {
+    display: block;
+    width: 80%;
+    padding: 0px;
+    margin: 20px auto;
+    background-color: transparent;
+}
+
+section {
+    background-color: inherit;
+}
+
+button {
+    border: none;
+    margin: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

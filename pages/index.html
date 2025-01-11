@@ -5,29 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_" />
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <span hidden>
         <span>
             Where in the world?
         </span>
-        <span>
-            <button id="light" class="material-symbols-outlined">
+        <span hidden>
+             <button id="light" class="material-symbols-outlined">
                 light_mode
             </button>
             <button id="dark" class="material-symbols-outlined">
                 dark_mode
             </button>
+            <span id="sort"></span>
         </span>
-    </header>
-    <main>
-        <span>
-            <button><a href="../index.html">back</a></button>
-        </span>
-    </main>
+    </span>
+    <button><a href="../index.html" class="material-symbols-outlined">arrow_back</a></button>
+    <div id="main">
+        
+    </div>
 </body>
-<script type="module" src="../script/contents.js"></script>
-<script type="module" src="../script/style.js"></script>
+<script type="module" src="../assets/data.js"></script>
+<script type="text/javascript" src="../script/style.js"></script>
 <script type="module" src="../script/pages.js"></script>
 </html>

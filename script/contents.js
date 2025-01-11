@@ -27,12 +27,15 @@ const message = () => {
 }
 
 function countryContent(country) {
+    const link = document.createElement('a');
     const section = document.createElement('section');
     const image = document.createElement('img');
     const head = document.createElement('h4');
     const population = document.createElement('p');
     const region = document.createElement('p');
     const capital = document.createElement('p');
+
+    link.href = `../pages/index.html?name=${country.name}`
 
     image.setAttribute('src', `${country.flag}`);
     image.setAttribute('alt', `Flag of ${country.name}`);
@@ -48,7 +51,8 @@ function countryContent(country) {
     section.appendChild(region);
     section.appendChild(capital);
 
-    return section;
+    link.appendChild(section)
+    return link;
 }
 
 //This function sets all the necessary elements to display each and every individual country and it's contents.
@@ -65,44 +69,43 @@ function showCountries(getCountries) {
 
     getCountries.forEach((country) => {
         const section = countryContent(country);
-
-        const link = document.createElement('a');
-        link.setAttribute('class', 'link-to-page');
-        link.setAttribute('href', `./pages/index.html`);
-
-        link.appendChild(section);
-        content.appendChild(link);
-
-        link.addEventListener('click', () => {
-            // Instead of alert, consider a smoother UI approach
-            alert(`Country: ${country.name}`);
-        });
+        content.appendChild(section);
     });
 }
 
 //This code handles the filtration of countries by region
-let filteredRegion;
+let selectedRegion = 'All';
+let filteredRegion = countries;
 
 filterByButton.forEach(button => {
     button.addEventListener('click', () => {
-        hideMenu()
-        filteredRegion = countries.filter(country => country.region === button.value);
-        button.value === 'All' ? showCountries(countries) : showCountries(filteredRegion);
+        hideMenu();
+        selectedRegion = button.value;
+        filterCountries();
     });
 });
 
 //The function to handle user input to search for a country
-let filteredCountries;
-
 search.addEventListener('input', () => {
+    filterCountries();
+});
+
+function filterCountries() {
     const searchTerm = search.value.toLowerCase().trim();
-    filteredCountries = countries.filter(country =>
+
+    if (selectedRegion === 'All') {
+        filteredRegion = countries;
+    } else {
+        filteredRegion = countries.filter(country => country.region === selectedRegion);
+    }
+
+    let filteredCountries = filteredRegion.filter(country =>
         country.name.toLowerCase().includes(searchTerm)
     );
 
     showCountries(filteredCountries);
-});
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     showCountries(countries);
-})
+});

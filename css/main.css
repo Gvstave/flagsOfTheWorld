@@ -120,12 +120,10 @@ header button {
     padding: 0px 30px;
 }
 
-/* This class points to the element that makes the section contents clickable */
-.link-to-page {
-    text-decoration: none;
+a {
     color: inherit;
-    border-radius: 4px;
-    background-color: white;
+    text-decoration: none;
+    background-color: transparent;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .12);
 }
 
@@ -134,15 +132,17 @@ section {
     height: 100%;
     text-align: left;
     padding-bottom: 15px;
-    border-radius: inherit;
+    border-radius: 4px;
     overflow-x: auto;
+    background-color: white;
+    color: inherit;
 }
 
 section img {
     width: 100%;
     height: auto;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     border: 1px solid whitesmoke;
 }
 
