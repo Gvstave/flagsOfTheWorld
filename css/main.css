@@ -126,7 +126,7 @@ a {
     color: inherit;
     border-radius: 4px;
     background-color: white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .12);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .120);
     background-color: none;
 }
 

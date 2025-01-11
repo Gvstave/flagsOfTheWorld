@@ -22,7 +22,7 @@ const hideMenu = () => {
 const message = () => {
     const message = document.createElement('p');
     message.classList.add('message');
-    message.textContent = `No countries found ⚠`;
+    message.textContent = 'No countries found ⚠';
     return message;
 }
 

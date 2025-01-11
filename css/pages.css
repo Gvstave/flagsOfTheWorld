@@ -13,6 +13,7 @@ section {
 button {
     border: none;
     margin: 20px;
+    background-color: white;
 }
 
 img {
