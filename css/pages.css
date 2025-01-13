@@ -1,6 +1,6 @@
 #main {
     display: block;
-    width: 80%;
+    width: 70%;
     padding: 0px;
     margin: 20px auto;
     background-color: transparent;
@@ -10,10 +10,19 @@ section {
     background-color: inherit;
 }
 
-button {
+#back-btn-holder {
+    display: none;
+}
+
+#back-btn-holder {
+    display: none;
+}
+
+ a {
     border: none;
-    margin: 20px;
+    margin: 40px;
     background-color: white;
+    display: block;
 }
 
 img {
