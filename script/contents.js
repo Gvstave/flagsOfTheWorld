@@ -35,7 +35,7 @@ function countryContent(country) {
     const region = document.createElement('p');
     const capital = document.createElement('p');
 
-    link.href = `../pages/index.html?name=${country.name}`
+    link.href = `./pages/index.html?name=${country.name}`
 
     image.setAttribute('src', `${country.flag}`);
     image.setAttribute('alt', `Flag of ${country.name}`);
