@@ -26,6 +26,8 @@ const message = () => {
     return message;
 }
 
+//  {link, section, image, head, population, region, capital} = htmlElements
+
 function countryContent(country) {
     const link = document.createElement('a');
     const section = document.createElement('section');
@@ -34,7 +36,8 @@ function countryContent(country) {
     const population = document.createElement('p');
     const region = document.createElement('p');
     const capital = document.createElement('p');
-
+    
+    
     link.href = `./pages/index.html?name=${country.name}`
 
     image.setAttribute('src', `${country.flag}`);

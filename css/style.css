@@ -72,3 +72,6 @@ body.dark-mode #loading {
     background-color: #202c37;
 }
 
+body.dark-mode a {
+    box-shadow: 0 0px 3px #000;
+}

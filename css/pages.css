@@ -1,9 +1,8 @@
 #main {
     display: block;
-    width: 70%;
+    max-width: 80%;
     padding: 0px;
     margin: 20px auto;
-    background-color: transparent;
 }
 
 section {

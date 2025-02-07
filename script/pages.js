@@ -9,7 +9,7 @@ if (country) {
 
     const main = document.getElementById('main');
     const detailsContent = document.createElement('section');
-
+    
     // Flag
     const flag = document.createElement('img');
     flag.setAttribute('src', country.flag);
@@ -141,7 +141,3 @@ if (country) {
     detailsContent.innerHTML = `An error occured while loading data, try refreshing the page to resolve this issue.`;
     main.appendChild(detailsContent)
 }
-
-    const translationList = Object.entries(country.translations)
-        .map(lang => lang === country.languages ? alert(country.languages) : alert(country.translations));
-
